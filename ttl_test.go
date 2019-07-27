@@ -15,6 +15,12 @@ func TestTurtlePositive(t *testing.T) {
 		basePath := "./tests/turtle/"
 		ttlFile := basePath + testName + ".ttl"
 		ntFile := basePath + testName + ".nt"
+		baseUri := ""
+		if testName == "turtle-subm-01" {
+			baseUri = "http://www.w3.org/2013/TurtleTests/turtle-subm-01.ttl"
+		} else if testName == "turtle-subm-27" {
+			baseUri = "http://www.w3.org/2013/TurtleTests/turtle-subm-27.ttl"
+		}
 		// ttlFd, err := os.Open(ttlFile)
 		ttlFd, err := ioutil.ReadFile(ttlFile)
 		if err != nil {
@@ -29,11 +35,11 @@ func TestTurtlePositive(t *testing.T) {
 		if verbosity > 0 {
 			fmt.Printf("\nStarting test %s\n", testName)
 		}
-		ttlGraph, err := NewParser("").Parse(ttlReader)
+		ttlGraph, err := NewParser(baseUri).Parse(ttlReader)
 		if err != nil {
 			t.Fatalf("Test %s failed. Error parsing %s\n(%s)", testName, ttlFile, err)
 		}
-		ntGraph, err := NewParser("").Parse(ntReader)
+		ntGraph, err := NewParser(baseUri).Parse(ntReader)
 		if err != nil {
 			t.Fatalf("Test %s failed. Error parsing %s\n(%s)", testName, ntFile, err)
 		}
@@ -248,8 +254,7 @@ var positiveParserTests []string = []string{
 	"positive_numeric",
 	"prefix_reassigned_and_used",
 	"repeated_semis_not_at_end",
-	// TODO: automatic base of doc name
-	//"turtle-subm-01",
+	"turtle-subm-01",
 	"turtle-eval-struct-01",
 	"langtagged_LONG_with_subtag",
 	"LITERAL_LONG2_with_REVERSE_SOLIDUS",
@@ -282,7 +287,7 @@ var positiveParserTests []string = []string{
 	"turtle-subm-24",
 	"turtle-subm-25",
 	"turtle-subm-26",
-	//"turtle-subm-27",
+	"turtle-subm-27",
 	"two_LITERAL_LONG2s",
 	"underscore_in_localName",
 }
