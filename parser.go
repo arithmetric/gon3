@@ -82,7 +82,7 @@ func (p *Parser) next() easylex.Token {
 func (p *Parser) expect(typ easylex.TokenType) (easylex.Token, error) {
 	tok := p.next()
 	if tok.Typ != typ {
-		return tok, fmt.Errorf("Expected %s, got %s (type %s)", typ, tok.Val, tok.Typ)
+		return tok, fmt.Errorf("Expected %v, got %s (type %v)", typ, tok.Val, tok.Typ)
 	}
 	return tok, nil
 }
@@ -315,7 +315,7 @@ func (p *Parser) parseSubject() error {
 		p.curSubject = bNode
 		return err
 	default:
-		return fmt.Errorf("Expected a subject, got %v (type %s)", tok, tok.Typ)
+		return fmt.Errorf("Expected a subject, got %v (type %v)", tok, tok.Typ)
 	}
 }
 
@@ -373,7 +373,7 @@ func (p *Parser) parsePredicate() error {
 		p.curPredicate = iri
 		return err
 	default:
-		return fmt.Errorf("Expected predicate, got %v (type %s)", tok, tok.Typ)
+		return fmt.Errorf("Expected predicate, got %v (type %v)", tok, tok.Typ)
 	}
 }
 
@@ -470,7 +470,7 @@ func (p *Parser) parseObject() error {
 		p.emitTriple(p.curSubject, p.curPredicate, lit)
 		return err
 	default:
-		return fmt.Errorf("Expected object, got %v (type %s)", tok, tok.Typ)
+		return fmt.Errorf("Expected object, got %v (type %v)", tok, tok.Typ)
 	}
 }
 
@@ -584,7 +584,7 @@ func (p *Parser) parseRDFLiteral() (*Literal, error) {
 			}
 			lit.DatatypeIRI = iri
 		default:
-			return nil, fmt.Errorf("Expected an IRI or PName, got %s (type %s)", tok.Val, tok.Typ)
+			return nil, fmt.Errorf("Expected an IRI or PName, got %s (type %v)", tok.Val, tok.Typ)
 		}
 	}
 	return lit, nil
