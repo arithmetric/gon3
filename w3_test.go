@@ -110,7 +110,7 @@ var negativeParserW3Tests []string = []string{
 	"bad-11.ttl",
 	"bad-12.ttl",
 	"bad-13.ttl",
-	// "bad-14.ttl",
+	"bad-14.ttl",
 }
 
 var positiveParserW3Tests []string = []string{

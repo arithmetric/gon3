@@ -160,10 +160,9 @@ var negativeParserTests []string = []string{
 	"turtle-syntax-bad-prefix-05.ttl",
 	"turtle-syntax-bad-string-01.ttl",
 	"turtle-syntax-bad-string-02.ttl",
-	// TODO: hangs
-	//"turtle-syntax-bad-string-03.ttl",
-	//"turtle-syntax-bad-string-04.ttl",
-	//"turtle-syntax-bad-string-05.ttl",
+	"turtle-syntax-bad-string-03.ttl",
+	"turtle-syntax-bad-string-04.ttl",
+	"turtle-syntax-bad-string-05.ttl",
 	"turtle-syntax-bad-string-06.ttl",
 	"turtle-syntax-bad-string-07.ttl",
 	"turtle-syntax-bad-struct-01.ttl",

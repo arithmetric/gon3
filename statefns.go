@@ -168,6 +168,10 @@ func lexIRIRef(l *easylex.Lexer) easylex.StateFn {
 func lexRDFLiteral(l *easylex.Lexer) easylex.StateFn {
 	if matchLongQuote.MatchOne(l) {
 		for {
+			if l.Peek() == easylex.EOF {
+				matchLongQuote.AssertOne(l, "Expected end of long quote before EOF")
+				break
+			}
 			if matchLongQuote.MatchOne(l) {
 				break
 			}
@@ -204,6 +208,10 @@ func lexRDFLiteral(l *easylex.Lexer) easylex.StateFn {
 	}
 	if matchLongSingleQuote.MatchOne(l) {
 		for {
+			if l.Peek() == easylex.EOF {
+				matchLongSingleQuote.AssertOne(l, "Expected end of long single quote before EOF")
+				break
+			}
 			if matchLongSingleQuote.MatchOne(l) {
 				break
 			}
