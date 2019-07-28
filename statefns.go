@@ -83,6 +83,13 @@ func lexDocument(l *easylex.Lexer) easylex.StateFn {
 	panic("unreachable")
 }
 
+func isListDelimiter(r rune) bool {
+	if strings.IndexRune(",;", r) >= 0 {
+		return true
+	}
+	return false
+}
+
 func isWhitespace(r rune) bool {
 	if strings.IndexRune("\n\r\t\v\f ", r) >= 0 {
 		return true
@@ -319,7 +326,7 @@ func lexNumericLiteral(l *easylex.Lexer) easylex.StateFn {
 			return lexDocument
 		} else if matchPeriod.MatchLookAhead(l, easylex.NewMatcher().AcceptRunes("0123456789eE")) {
 			if matchDigits.MatchRun(l) {
-				if isWhitespace(l.Peek()) {
+				if isWhitespace(l.Peek()) || isListDelimiter(l.Peek()) {
 					l.Emit(tokenDecimal)
 					return lexDocument
 				}
