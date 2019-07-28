@@ -192,9 +192,16 @@ func (p *Parser) parsePrefix() error {
 	}
 	// map a new namespace in parser state
 	key := pNameNS.Val[:len(pNameNS.Val)-1]
-	val := newIRIFromString(iriRef.Val) //@@@
+	val := newIRIFromString(iriRef.Val)
+	// Handle relative URL in IRI value
+	if (!isAbsoluteUrl(val.url)) {
+		val, err = p.resolveIRI(iriRef.Val)
+		if err != nil {
+			return err
+		}
+	}
 	p.namespaces[key] = val
-	return err
+	return nil
 }
 
 func (p *Parser) parseBase() error {
@@ -210,8 +217,15 @@ func (p *Parser) parseBase() error {
 	if err != nil {
 		return err
 	}
-	// TODO: validate IRI?
-	p.baseURI = newIRIFromString(iriRef.Val)
+	val := newIRIFromString(iriRef.Val)
+	// Handle relative URL in IRI value
+	if (!isAbsoluteUrl(val.url)) {
+		val, err = p.resolveIRI(iriRef.Val)
+		if err != nil {
+			return err
+		}
+	}
+	p.baseURI = val;
 	return nil
 }
 
@@ -628,6 +642,19 @@ func joinURL(URI, p string) (string, error) {
 			return "", err
 		}
 		base = base.ResolveReference(ref)
+		// Preserve trailing hash
+		if strings.HasSuffix(p, "#") {
+			return base.String() + "#", nil
+		}
+	}
+	// Preserve trailing hash
+	if strings.HasSuffix(URI, "#") {
+		return base.String() + "#", nil
 	}
 	return base.String(), nil
+}
+
+func isAbsoluteUrl(URI string) bool {
+	u, err := url.Parse(URI)
+	return err == nil && u.Scheme != "" && u.Host != ""
 }
