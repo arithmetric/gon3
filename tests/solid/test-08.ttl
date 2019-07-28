@@ -1,0 +1,31 @@
+@prefix : <#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix pro: <./>.
+@prefix n0: <http://xmlns.com/foaf/0.1/>.
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+@prefix schem: <http://schema.org/>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix inbox: </inbox/>.
+@prefix sp: <http://www.w3.org/ns/pim/space#>.
+@prefix inr: </>.
+
+pro:card a n0:PersonalProfileDocument; n0:maker :me; n0:primaryTopic :me.
+
+:id1541516167863 n:value <mailto:soxxx@inxyz.community>.
+
+:me
+    a schem:Person, n0:Person;
+    n:fn "Inrupt Solid";
+    n:hasEmail :id1541516167863;
+    n:hasPhoto <images%20(1).jpeg>;
+    n:note
+        "Visit us online at https://inrupt.solid.community for more information about the Solid Ecosystem. Also visit the www.inrupt.com to learn more.";
+    n:organization-name "inrupt.community";
+    n:role "testing solid";
+    ldp:inbox inbox:;
+    sp:preferencesFile </settings/prefs.ttl>;
+    sp:storage inr:;
+    solid:account inr:;
+    solid:privateTypeIndex </settings/privateTypeIndex.ttl>;
+    solid:publicTypeIndex </settings/publicTypeIndex.ttl>;
+    n0:name "Inrupt Solid".

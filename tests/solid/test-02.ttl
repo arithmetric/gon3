@@ -1,0 +1,26 @@
+@prefix : <#>.
+@prefix priv: <>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix test: <test/>.
+@prefix st: <http://www.w3.org/ns/posix/stat#>.
+@prefix pl: <http://www.w3.org/ns/iana/media-types/text/plain#>.
+
+priv:
+    a ldp:BasicContainer, ldp:Container;
+    terms:modified "2019-07-26T15:40:39Z"^^XML:dateTime;
+    ldp:contains priv:hello, test:;
+    st:mtime 1564155639.569;
+    st:size 4096.
+priv:hello
+    a pl:Resource, ldp:Resource;
+    terms:modified
+    "2019-07-26T13:01:33Z"^^XML:dateTime, "2019-07-26T14:19:12Z"^^XML:dateTime;
+    st:mtime 1564146093.084, 1564150752.325;
+    st:size 0, 12.
+test:
+    a ldp:BasicContainer, ldp:Container, ldp:Resource;
+    terms:modified "2019-07-26T12:51:39Z"^^XML:dateTime;
+    st:mtime 1564145499.312;
+    st:size 4096.

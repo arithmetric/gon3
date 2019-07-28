@@ -1,0 +1,12 @@
+@prefix : <#>.
+@prefix pub: <>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix st: <http://www.w3.org/ns/posix/stat#>.
+
+pub:
+    a ldp:BasicContainer, ldp:Container;
+    terms:modified "2018-06-29T12:57:35Z"^^XML:dateTime;
+    st:mtime 1530277055.427;
+    st:size 4096.

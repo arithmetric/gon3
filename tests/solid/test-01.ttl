@@ -1,0 +1,12 @@
+@prefix : <#>.
+@prefix inbox: <>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix st: <http://www.w3.org/ns/posix/stat#>.
+
+inbox:
+    a ldp:BasicContainer, ldp:Container;
+    terms:modified "2019-07-25T20:20:14Z"^^XML:dateTime;
+    st:mtime 1564086014.001;
+    st:size 4096.

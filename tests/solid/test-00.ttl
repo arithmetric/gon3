@@ -1,0 +1,19 @@
+@prefix : <#>.
+@prefix pro: <>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix st: <http://www.w3.org/ns/posix/stat#>.
+@prefix tur: <http://www.w3.org/ns/iana/media-types/text/turtle#>.
+
+pro:
+    a ldp:BasicContainer, ldp:Container;
+    terms:modified "2019-07-26T02:48:14Z"^^XML:dateTime;
+    ldp:contains pro:card;
+    st:mtime 1564109294.062;
+    st:size 4096.
+pro:card
+    a tur:Resource, ldp:Resource;
+    terms:modified "2019-07-26T02:48:14Z"^^XML:dateTime;
+    st:mtime 1564109294.062;
+    st:size 937.

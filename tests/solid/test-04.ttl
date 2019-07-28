@@ -1,0 +1,42 @@
+@prefix : <#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix pro: <./>.
+@prefix n0: <http://xmlns.com/foaf/0.1/>.
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+@prefix schem: <http://schema.org/>.
+@prefix n1: <http://www.w3.org/ns/auth/acl#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix inbox: </inbox/>.
+@prefix sp: <http://www.w3.org/ns/pim/space#>.
+@prefix joh: </>.
+
+pro:card a n0:PersonalProfileDocument; n0:maker :me; n0:primaryTopic :me.
+
+:id1538070793908 a n:Work; n:value <mailto:johnx@inruxx.com>.
+
+:id1538070875041
+    n:country-name "USA";
+    n:locality "One Marxxx Park Drive, Suite xx00, Boston, Mass";
+    n:postal-code "MA 02210";
+    n:street-address "Gunderxxx Dettxxx".
+:id1539972811587 a n:Work.
+
+:me
+    a schem:Person, n0:Person;
+    n:fn "John Bruce";
+    n:hasAddress :id1538070875041;
+    n:hasEmail :id1538070793908;
+    n:hasPhoto <johnb.png>;
+    n:hasTelephone :id1539972811587;
+    n:note "https://www.linkedin.com/in/johnwbrxxx/";
+    n:organization-name "Inrupt, Inc";
+    n:role "Co-founder and CEO";
+    n1:trustedApp [ n1:mode n1:Read; n1:origin <https://timbl.com> ];
+    ldp:inbox inbox:;
+    sp:preferencesFile </settings/prefs.ttl>;
+    sp:storage joh:;
+    solid:account joh:;
+    solid:privateTypeIndex </settings/privateTypeIndex.ttl>;
+    solid:publicTypeIndex
+    <publicTypeIndex.ttl>, </settings/publicTypeIndex.ttl>;
+    n0:name "John Bruce".

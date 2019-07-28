@@ -1,0 +1,69 @@
+@prefix : <#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix pro: <./>.
+@prefix n0: <http://xmlns.com/foaf/0.1/>.
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+@prefix schem: <http://schema.org/>.
+@prefix n1: <http://www.w3.org/ns/auth/acl#>.
+@prefix cert: <http://www.w3.org/ns/auth/cert#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix inbox: </inbox/>.
+@prefix sp: <http://www.w3.org/ns/pim/space#>.
+@prefix jus: </>.
+@prefix res: <http://dbpedia.org/resource/>.
+@prefix c: <https://johnb.inrupt.net/profile/card#>.
+@prefix n2: <https://melvincarvalho.com/#>.
+@prefix n3: <https://ruben.verborgh.org/profile/#>.
+@prefix c0: <https://solid.kjernsmo.net/profile/card#>.
+@prefix c1: <https://www.w3.org/People/Berners-Lee/card#>.
+
+pro:card a n0:PersonalProfileDocument; n0:maker :me; n0:primaryTopic :me.
+
+:id1529458791122 n:value "justin.bing@janeiroxyz.com".
+
+:id1550101097000 n:country-name "United States".
+
+:me
+    a schem:Person, n0:Person;
+    n:fn "Justin Bingham";
+    n:hasAddress :id1550101096000, :id1550101097000;
+    n:hasEmail :id1529458791122;
+    n:note "Solid core team and Inrupt hacker.";
+    n:organization-name "Janeiro Digital";
+    n:role "CTO";
+    n1:trustedApp
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://edit.o.team>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://vinnl.github.io>
+            ],
+        [ n1:mode n1:Read; n1:origin <https://solid.community> ];
+    cert:key
+            [
+                a cert:RSAPublicKey;
+                cert:exponent 65537;
+                cert:modulus
+                    "C772C147835E5C21D6151A8BD14947000C847FBAD59B835341738A7E6A18B76E96B83C44BAF92F31B84F3AC1910FFC7B2F6821E96B233F13BE77AE501215C06C036C118A83903B8AB5EC92F1818AC3896F12C2384641D4529F0686458E7A595C6A10F2F34EA7D3200C0CBC9CB0DE926EC4D0BCFE5C3CFA664FF76AF20D68BEACCBA7CCC9C1CD9473FAFF6E21D4C3FB46B7E234FF89E4F5CDD41B09A7A2EA240024964DEB61BECD527F0FE8EF150315AE972FCA53B2B3DED72BCBC4361941FB13AF8AE3DCCAC655E349826C7E825C705665B0DADFF055E12EF29F894ED21A67A2F273DC2942BFD772170EE069F143A76A99CEF6C157C1D185133FAEFB8DCDA1BB"^^XML:hexBinary
+            ];
+    ldp:inbox inbox:;
+    sp:preferencesFile </settings/prefs.ttl>;
+    sp:storage jus:;
+    solid:account jus:;
+    solid:privateTypeIndex </settings/privateTypeIndex.ttl>;
+    solid:publicTypeIndex
+    <publicTypeIndex.ttl>, </settings/publicTypeIndex.ttl>;
+    n0:based_name res:Boston;
+    n0:familyName "Bingham";
+    n0:gender "male";
+    n0:givenName "Justin";
+    n0:img </public/me.jpg>;
+    n0:knows c:me, n2:me, n3:me, c0:me, c1:i;
+    n0:mbox <mailto:justin.bing@janeiroxyz.com>;
+    n0:name "Justin Bingham";
+    n0:title "Mr";
+    n0:topic_interest "https://www.janeirodigital.com";
+    n0:workplaceHomepage <https://www.janeirodigital.com>.

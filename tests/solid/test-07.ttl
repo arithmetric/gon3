@@ -1,0 +1,101 @@
+@prefix : <#>.
+@prefix n0: <http://xmlns.com/foaf/0.1/>.
+@prefix pub: <https://jackson.dev.inrupt.net/public/>.
+@prefix mee: <http://www.w3.org/ns/pim/meeting#>.
+@prefix flow: <http://www.w3.org/2005/01/wf/flow#>.
+@prefix c: <https://jackson.dev.inrupt.net/profile/card#>.
+@prefix pro: <./>.
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+@prefix schem: <http://schema.org/>.
+@prefix n1: <http://www.w3.org/ns/auth/acl#>.
+@prefix cert: <http://www.w3.org/ns/auth/cert#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix inbox: </inbox/>.
+@prefix sp: <http://www.w3.org/ns/pim/space#>.
+@prefix j: </>.
+@prefix terms: <http://www.w3.org/ns/solid/terms#>.
+@prefix c0: <https://kellyo.inrupt.net/profile/card#>.
+@prefix c1: <https://michielbdejong.inrupt.net/profile/card#>.
+@prefix c2: <https://mitzilaszlo.solid.community/profile/card#>.
+@prefix c3: <https://rowanjacobs.solid.community/profile/card#>.
+@prefix c4: <https://rubeniswc.inrupt.net/profile/card#>.
+@prefix c5: <https://timbl-2018-demo.solid.community/profile/card#>.
+@prefix c6: <https://timbl.solid.community/profile/card#>.
+@prefix pu: </public/>.
+@prefix c7: <https://otherjackson.solid.community/profile/card#>.
+@prefix publ: <https://michielbdejong.inrupt.net/public/>.
+
+pub:fd2af717 a mee:LongChat; flow:participant c:me.
+
+    pro:card a n0:PersonalProfileDocument; n0:maker :me; n0:primaryTopic :me.
+
+    :id1538406374276 n:value <mailto:jackxxx@oxyz.txyz>.
+
+    :id1538406392561 n:value <tel:6786999704>.
+
+:me
+    a schem:Person, n0:Person;
+    n:fn "Jackson Morgan";
+    n:hasAddress :id1555189453000;
+    n:hasEmail :id1538406374276;
+    n:hasPhoto <_1564002423000_.jpeg>;
+    n:hasTelephone :id1538406392561;
+    n:organization-name "Inrupt";
+    n:phone "6786999704";
+    n:role "Software";
+    n1:trustedApp
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <https://develop.generator.inrupt.com>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <http://edit.o.team>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <http://localhost:3000>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://datasister.5apps.com>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://edit.o.team>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://inrupt.net>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://team.inrupt.net>
+            ],
+        [ n1:mode n1:Append, n1:Read, n1:Write; n1:origin <https://timbl.com> ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://vinnl.github.io>
+            ];
+    cert:key
+            [
+                a cert:RSAPublicKey;
+                cert:exponent 65537;
+                cert:modulus
+                    "AB564BF3F36A712A6D17CE87EE49185D802DAF82313C925D51E82ED618200CFDF1542717F41A6D39C01726967A40A170547B050540A089B61A4143DBD4E360EBAC6F086F37A40CDAE61F33AE2181A187B3BE861D9ABF8A439532D0B4DAAB83686508CFB88627F77A8F0D117231521AE095334B28CAEC8FD2928C8A29CB15C38C27DA8B9426478BFB00CED71FB1904C9B0D27E2C4FF9F37882A917BD54957D4D9215E3625B8E195CCF2E8B18A528F9E4D1A19E525AF54CDB0804599DA9786D210AA04821977C7AF8F9C03BA1094F695A19F3C4B52DE9FC11ED14616559FC1DE0C610FBDC0F0DE5D817C417A4A5E6AC3FCD1C7B3F6B574BAFBD36E4B23164CE7D9"^^XML:hexBinary
+            ];
+    ldp:inbox inbox:;
+    sp:preferencesFile </settings/prefs.ttl>;
+    sp:storage j:;
+    terms:account j:;
+    terms:privateTypeIndex </settings/privateTypeIndex.ttl>;
+    terms:publicTypeIndex
+    <publicTypeIndex.ttl>, </settings/publicTypeIndex.ttl>;
+    n0:img
+    "https://jackson.solid.community/profile/JacksonProfile_1555190418000_.png";
+    n0:knows pro:card, c0:me, c1:me, c2:me, c3:me, c4:me, c5:me, c6:me;
+    n0:name "Jackson".
+pu:d3149ef5 a mee:LongChat; flow:participant c7:me.
+
+publ:ab34c8d2 a mee:LongChat; flow:participant c1:me, c2:me.
